@@ -8,3 +8,7 @@ plt.hist(x_numbers, bins = 50)
 plt.title("y Histogram")
 plt.xlabel("Value")
 plt.ylabel("Frequency")
+
+#box plot with outliers 
+plt.figure()
+plt.boxplot(train.y, sym='k.')
