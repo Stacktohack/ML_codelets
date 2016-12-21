@@ -1,0 +1,10 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+import plotly.plotly as py
+
+x_numbers = train.y
+plt.hist(x_numbers, bins = 50)
+plt.title("y Histogram")
+plt.xlabel("Value")
+plt.ylabel("Frequency")
