@@ -1,0 +1,24 @@
+# Now let us look at the correlation coefficient of each of these variables #
+x_cols = [col for col in train.columns if col not in ['id','timestamp','y']]
+x_cols = lasso_cols
+labels = []
+values = []
+for col in x_cols:
+    labels.append(col)
+    cor = np.corrcoef(train[col].values, train.y.values)[0,1]
+    print col, cor
+    values.append(cor)
+    
+    
+
+    
+ind = np.arange(len(labels))
+width = 0.9
+fig, ax = plt.subplots(figsize=(12,40))
+rects = ax.barh(ind, np.array(values), color='y')
+ax.set_yticks(ind+((width)/2.))
+ax.set_yticklabels(labels, rotation='horizontal')
+ax.set_xlabel("Correlation coefficient")
+ax.set_title("Correlation coefficient")
+#autolabel(rects)
+plt.show()
